@@ -8,6 +8,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import employee.parser.EmployeeData;
+import employee.parser.EmployeeFactory;
 import employee.parser.TeamData;
 import employee.parser.TeamGenerator;
 import employee.parser.TeamSummary;
@@ -30,6 +31,14 @@ public class TeamGenerationTests {
 		}
 
 		Assert.assertEquals(teams.get(0).getDaysWorked(), 3531);
+	}
+	
+	@Test
+	public void testEmployeeFromFile() {
+		List<EmployeeData> employeesFromResourceFile = EmployeeFactory
+				.getEmployeesFromResourceFile("employeesData.csv");
+		
+		Assert.assertEquals(employeesFromResourceFile.size(), 3);
 	}
 	
 	public static void main(String[] args) {

@@ -1,13 +1,8 @@
 package employee.parser;
 
 import java.time.LocalDate;
-import java.util.Date;
-
-import utils.TimeUtils;
 
 public class EmployeeData {
-
-	private final String TODAY_KEYWORD = "NULL";
 
 	private int empId;
 	private int projectId;

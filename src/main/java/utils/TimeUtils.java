@@ -4,10 +4,32 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.ZoneOffset;
 import java.util.Date;
+import java.util.List;
 
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 import org.joda.time.Interval;
 
+import com.joestelmach.natty.DateGroup;
+import com.joestelmach.natty.Parser;
+
 public class TimeUtils {
+	
+	private static final String TODAY_KEYWORD = "NULL";
+	
+	private static Parser parser;
+
+	private static List<DateGroup> parse;
+	
+	private static Parser getParser() {
+		if (parser == null) {
+			Logger.getRootLogger().setLevel(Level.OFF);
+			parser = new Parser();
+		}
+		
+		return parser;
+	}
+	
 	public static Date convertDate(LocalDate localDate) {
 		return Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
 	}
@@ -32,5 +54,17 @@ public class TimeUtils {
 		}
 		
 		return 0;
+	}
+	
+	public static LocalDate parseLocalDate(String date) {
+		date = date.trim();
+		if (date.equals(TODAY_KEYWORD)) {
+			return LocalDate.now();
+		}
+		
+		DateGroup group = getParser().parse(date).get(0);
+		Date parsedDate = group.getDates().get(0);
+		
+		return convertDate(parsedDate);
 	}
 }
