@@ -4,8 +4,8 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.testng.Assert;
-import org.testng.annotations.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 import employee.parser.EmployeeData;
 import employee.parser.EmployeeFactory;
@@ -30,7 +30,7 @@ public class TeamGenerationTests {
 					team.getEmployeeId1(), team.getEmployeeId2(), team.getDaysWorked()));
 		}
 
-		Assert.assertEquals(teams.get(0).getDaysWorked(), 3531);
+		Assertions.assertEquals(teams.get(0).getDaysWorked(), 3531);
 	}
 	
 	@Test
@@ -38,7 +38,7 @@ public class TeamGenerationTests {
 		List<EmployeeData> employeesFromResourceFile = EmployeeFactory
 				.getEmployeesFromResourceFile("employeesData.csv");
 		
-		Assert.assertEquals(employeesFromResourceFile.size(), 3);
+		Assertions.assertEquals(employeesFromResourceFile.size(), 3);
 	}
 	
 	public static void main(String[] args) {
