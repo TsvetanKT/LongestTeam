@@ -24,8 +24,9 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import utils.ResourceUtils;
 
-public class TableViewSampleWithData extends Application {
+public class LongestTeamUI extends Application {
 
     private FileChooser fileChooser;
     private static TableView<EmployeeData> employeeTable = new TableView<EmployeeData>();
@@ -81,6 +82,7 @@ public class TableViewSampleWithData extends Application {
         employeeTable.getColumns().addAll(empIdCol, projectIdCol, dateFromCol, dateToCol);
         
         fileChooser = new FileChooser();
+        fileChooser.setInitialDirectory(ResourceUtils.getDefaultResourceFolder());
         final Button openButton = new Button("Open file...");
 
         openButton.setOnAction(new EventHandler<ActionEvent>() {
@@ -130,7 +132,6 @@ public class TableViewSampleWithData extends Application {
     private void selectFile(File file) {
         
         System.out.println("File selected: " + file.getAbsolutePath());
-        //System.out.println(ResourceUtils.loadFileString(file));
         
         List<EmployeeData> employeesFromFile = EmployeeFactory.getEmployeesFromFile(file);
         employeeData = FXCollections.observableArrayList(employeesFromFile);

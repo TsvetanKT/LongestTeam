@@ -9,6 +9,7 @@ import java.util.logging.Logger;
 import org.apache.commons.io.FileUtils;
 
 public class ResourceUtils {
+    
 	/**
 	 * Loads a file as string
 	 * 
@@ -37,6 +38,13 @@ public class ResourceUtils {
 		File file = new File(resource);
 		return loadFileString(file);
 	}
+	
+	public static File getDefaultResourceFolder() {
+	    String resource =  ClassLoader.getSystemResource("\\").getFile();
+	    return new File(resource).getParentFile();
+	}
+	
+	
 
 	public static void main(String[] args) {
 
