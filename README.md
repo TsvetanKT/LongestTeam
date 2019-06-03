@@ -12,6 +12,10 @@ App that finds the two employees that were working longest as a team in same pro
 ### Screenshot:
 ![Home view](https://raw.githubusercontent.com/TsvetanKT/longest-team/master/LongestTeamV1.png "Home view")
 
+### To Run:
+*	UI App in class: **LongestTeamUI**
+*	Unit tests in class: **TeamGenerationTests**
+
 ### TODO:
 *	UI refactoring
 * 	Error handling
