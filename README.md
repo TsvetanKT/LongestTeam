@@ -8,3 +8,10 @@ App that finds the two employees that were working longest as a team in same pro
 * 	Unit tests using TestNg
 *	Test data in resources dir
 *	UI using JavaFx
+
+### Screenshot:
+![Home view](https://raw.githubusercontent.com/TsvetanKT/SpringSiteScraper/master/SpringSiteScraperScreenshot.png "Home view")
+
+### TODO:
+*	UI refactoring
+* 	Error handling
