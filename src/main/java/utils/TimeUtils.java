@@ -4,12 +4,9 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.ZoneOffset;
 import java.util.Date;
-import java.util.List;
-
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.joda.time.Interval;
-
 import com.joestelmach.natty.DateGroup;
 import com.joestelmach.natty.Parser;
 
@@ -18,8 +15,6 @@ public class TimeUtils {
 	private static final String TODAY_KEYWORD = "NULL";
 	
 	private static Parser parser;
-
-	private static List<DateGroup> parse;
 	
 	private static Parser getParser() {
 		if (parser == null) {

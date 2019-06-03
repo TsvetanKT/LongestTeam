@@ -82,7 +82,7 @@ public class LongestTeamUI extends Application {
         employeeTable.getColumns().addAll(empIdCol, projectIdCol, dateFromCol, dateToCol);
         
         fileChooser = new FileChooser();
-        fileChooser.setInitialDirectory(ResourceUtils.getDefaultResourceFolder());
+        fileChooser.setInitialDirectory(ResourceUtils.getDefaultResourceDirectory());
         final Button openButton = new Button("Open file...");
 
         openButton.setOnAction(new EventHandler<ActionEvent>() {
@@ -117,12 +117,12 @@ public class LongestTeamUI extends Application {
         empId2.setMinWidth(150);
         empId2.setCellValueFactory(new PropertyValueFactory<TeamSummary, Integer>("employeeId2"));
 
-        TableColumn projectId = new TableColumn("Project ID");
-        projectId.setMinWidth(100);
+        TableColumn projectId = new TableColumn("Last Project ID");
+        projectId.setMinWidth(150);
         projectId.setCellValueFactory(new PropertyValueFactory<TeamSummary, Integer>("lastProject"));
         
         TableColumn daysWorked = new TableColumn("Days worked");
-        daysWorked.setMinWidth(200);
+        daysWorked.setMinWidth(150);
         daysWorked.setCellValueFactory(new PropertyValueFactory<TeamSummary, Integer>("totalDaysTogether"));
 
         summaryTable.setItems(summaryData);

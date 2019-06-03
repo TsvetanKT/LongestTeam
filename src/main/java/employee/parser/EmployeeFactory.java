@@ -42,5 +42,4 @@ public class EmployeeFactory {
 		
 		return empData;
 	}
-	
 }

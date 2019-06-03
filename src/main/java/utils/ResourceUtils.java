@@ -14,7 +14,7 @@ public class ResourceUtils {
 	 * Loads a file as string
 	 * 
 	 * @param file
-	 * @return
+	 * @return the file content as string
 	 */
 	public static String loadFileString(File file) {
 		try {
@@ -31,7 +31,7 @@ public class ResourceUtils {
 	 * Loads a file from resources as string
 	 * 
 	 * @param resourceName
-	 * @return
+	 * @return the file content as string
 	 */
 	public static String loadResourceFileAsString(String resourceName) {
 		String resource = ClassLoader.getSystemResource(resourceName).getFile();
@@ -39,21 +39,12 @@ public class ResourceUtils {
 		return loadFileString(file);
 	}
 	
-	public static File getDefaultResourceFolder() {
+	/**
+	 * Returns the default resource directory
+	 * @return the resource dir as File
+	 */
+	public static File getDefaultResourceDirectory() {
 	    String resource =  ClassLoader.getSystemResource("\\").getFile();
 	    return new File(resource).getParentFile();
-	}
-	
-	
-
-	public static void main(String[] args) {
-
-		String content = loadResourceFileAsString("employeesData.csv");
-		String[] lines = content.split("\n");
-
-		int i = 0;
-		for (String string : lines) {
-			System.out.println(i++ + " " + string);
-		}
 	}
 }

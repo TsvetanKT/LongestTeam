@@ -55,12 +55,12 @@ public class TeamGenerator {
             if (teamMap.containsKey(teamData.toString())) {
                 current = teamMap.get(teamData.toString());
                 current.addProjectDays(teamData.getProjectId(), teamData.getDaysWorked());
-                
-                //teamMap.put(teamData.toString(), current);
             } else {
                 current = new TeamSummary(teamData.getEmployeeId1(), teamData.getEmployeeId2(),
                         teamData.getProjectId(), teamData.getDaysWorked());
             }
+            
+            teamMap.put(teamData.toString(), current);
             
             if (current.getTotalDaysTogether() > maxWorkingTeam.getTotalDaysTogether()) {
                 maxWorkingTeam = current;
