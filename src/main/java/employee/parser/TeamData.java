@@ -44,4 +44,9 @@ public class TeamData {
 	public void setDaysWorked(int daysWorked) {
 		this.daysWorked = daysWorked;
 	}
+	
+	@Override
+	public String toString() {
+	    return this.employeeId1 + " " + this.employeeId2;
+	}
 }

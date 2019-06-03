@@ -1,0 +1,8 @@
+EmpID,ProjectID,DateFrom,DateTo
+143,12,2013-11-01,2014-01-05
+218,10,2012-05-16,NULL
+143,10,2009-01-01,2011-04-27
+555,12,day before yesterday,yesterday
+556,12,day before yesterday,today
+557,15,May 01 11:57:44 EEST 2019, Jun 01 11:57:44 EEST 2019
+558,15,May 01 11:57:44 EEST 2019, NULL

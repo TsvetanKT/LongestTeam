@@ -10,10 +10,11 @@ public class TeamSummary {
 	private Map<Integer, Integer> projects;
 	private int totalDaysTogether;
 	
-	public TeamSummary(int employeeId1, int employeeId2) {
+	public TeamSummary(int employeeId1, int employeeId2, int projectId, int daysWorked) {
 		this.employeeId1 = employeeId1;
 		this.employeeId2 = employeeId2;
 		this.projects = new HashMap<>();
+		this.addProjectDays(projectId, daysWorked);
 	}
 
 	public int getEmployeeId1() {
