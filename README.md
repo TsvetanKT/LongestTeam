@@ -10,7 +10,7 @@ App that finds the two employees that were working longest as a team in same pro
 *	UI using JavaFx
 
 ### Screenshot:
-![Home view](https://raw.githubusercontent.com/TsvetanKT/SpringSiteScraper/master/SpringSiteScraperScreenshot.png "Home view")
+![Home view](https://raw.githubusercontent.com/TsvetanKT/longest-team/master/LongestTeamV1.png "Home view")
 
 ### TODO:
 *	UI refactoring
