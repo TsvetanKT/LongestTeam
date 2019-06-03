@@ -8,6 +8,7 @@ public class TeamSummary {
 	private int employeeId1;
 	private int employeeId2;
 	private Map<Integer, Integer> projects;
+	private int lastProject;
 	private int totalDaysTogether;
 	
 	public TeamSummary(int employeeId1, int employeeId2, int projectId, int daysWorked) {
@@ -17,7 +18,7 @@ public class TeamSummary {
 		this.addProjectDays(projectId, daysWorked);
 	}
 
-	public int getEmployeeId1() {
+    public int getEmployeeId1() {
 		return employeeId1;
 	}
 
@@ -41,6 +42,14 @@ public class TeamSummary {
 		this.projects = projects;
 	}
 	
+	public int getLastProject() {
+        return lastProject;
+    }
+
+
+    public void setLastProject(int lastProject) {
+    }
+    
 	public int getTotalDaysTogether() {
 		return totalDaysTogether;
 	}
@@ -56,6 +65,7 @@ public class TeamSummary {
 			this.projects.put(projectId, workingDays);
 		}
 		
+		lastProject = projectId;
 		this.totalDaysTogether += workingDays;
 	}
 }
