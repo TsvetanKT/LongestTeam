@@ -6,8 +6,17 @@ import java.util.List;
 import java.util.Map;
 import utils.TimeUtils;
 
+/**
+ * @author Tsvetan T
+ *
+ */
 public class TeamGenerator {
 
+	/**
+	 * Generates teems from employee data
+	 * @param employees
+	 * @return the found teams or empty list if there are none
+	 */
 	public static List<TeamData> generateTeams(List<EmployeeData> employees) {
 
 		List<TeamData> teams = new ArrayList<>();

@@ -10,7 +10,8 @@ import utils.TimeUtils;
 
 public class EmployeeFactory {
 	
-	private static final String CSV_SEPARATOR = ",";
+	private static final String NEW_LINE_SEPARATOR = "\n";
+    private static final String CSV_SEPARATOR = ",";
 
 	public static List<EmployeeData> getEmployeesFromResourceFile(String resourceName) {
 		String content = ResourceUtils.loadResourceFileAsString(resourceName);
@@ -23,7 +24,7 @@ public class EmployeeFactory {
 	}
 	
 	private static List<EmployeeData> getEmployeesFromString(String csvContent) {
-		String[] lines = csvContent.split("\n");
+		String[] lines = csvContent.split(NEW_LINE_SEPARATOR);
 		
 		List<EmployeeData> empData = new ArrayList<>();
 		
